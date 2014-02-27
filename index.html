@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <head>
-    <title>All purpose Index file</title>
+    <title>Drawing Fun 1 Index file</title>
    <!-- Author: J. Apodaca    -->
    <!-- Date:   Feb. 22, 2014 -->
-   <!-- File:   AllPurpose.html -->
+   <!-- File:   index.html -->
    
    <!-- Style specs are most often in the head -->
    <!-- Add a little Style (external file) -->
-   <link rel="stylesheet" href="css/AllPurpose.css">
+   <link rel="stylesheet" href="css/DrawingFun1.css">
    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
    
 </head>
@@ -15,65 +15,35 @@
 
 		 <!-- Display a button and provide a text division (div) for a result -->
 		 <p>
-		<button id="myButton1" onclick="AddToContainer()"> Add a Line to A Text Division </button>
+		<button id="myButton1" onclick="DrawMe()"> Draw It </button>
 		</p>
-		<!-- Display a button that calls a popup box -->
 		<p>
-		<button id="myButton2" onclick="displayMsg()"> Popup Message </button>
+		<button id="upButton" onclick="DrawUp()"> Up </button>
 		</p>
-		<!-- Display a button that updates the third text division-->
-		<p>
-		<button id="myButton3" onclick="WriteOverContainer()"> Write Over the Third Text Division </button>
+		 <p>
+		<button id="leftButton" onclick="DrawLeft()"> Left </button>
+		<button id="rightButton" onclick="DrawRight()"> Right </button>
 		</p>
+		 <p>
+		<button id="downButton" onclick="DrawDown()"> Down </button>
+		</p>				
     
     <div id="firstDiv">
 	<p>First Division</p>
 	<p>Some more text.</p></div>
 	<div id="container"></div>
-	<div id="thirdDiv">
-	<p>Third Division</p>
-	<p>Some more text.</p></div>
-	<div id="fourthDiv">
-	<p>Fourth Division</p></div>
+
+	
+	<!-- First Code to begin drawing -->
+	<!-- All drawing on the canvas must be done inside a JavaScript -->
+	<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+    </canvas>
 
 <!-- JavaScripts are most often in the body -->
 <!-- Outside JavaScript -->
-<script src="js/AllPurpose.js"> </script>
+<script src="js/DrawingFun1.js"> </script>
 
-<!-- Inside JavaScript -->
-<script type="text/javascript">
 
-var myCount1 = 0;
-var myCount2 = 0;
-
-//  This is an example of a JavaScript function placed inside the HTML file 
-function AddToContainer()
-	{
-	var content = document.getElementById('container').innerHTML;
-	var d = new Date()
-
-	myCount1 = myCount1 + 1;  // increment the number of time the user hits the button.
-	document.getElementById('container').innerHTML= content + "<br>" + myCount1 + ". " + d.toString() ;
-
-	} // End AddToContainer.
-
-function WriteOverContainer()
-	{
-	var d = new Date()
-	
-	myCount2 = myCount2 + 1;  // increment the number of time the user hits the button.
-	document.getElementById('fourthDiv').innerHTML= myCount2 + ". " + d.toString() ;
-	} // End WriteOverContainer.
-	
-	// Define the function...
-function displayMsg()
-	{
-	var d = new Date()
-	
-	alert( d.toString() )
-	} // End displayMsg.
-
-</script> 
 
 </body>
 </html>
