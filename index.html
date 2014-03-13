@@ -15,10 +15,11 @@
 
 		 <!-- Display a button and provide a text division (div) for a result -->
 		 <p>
-		<button id="myButton1" onclick="DrawMe()"> Draw It </button>
+		<button id="myButton1" onclick="DrawMe()"> <img src="images/kitty.gif"/> Draw It </button>
 		</p>
 		<p>
 		<button id="upButton" onclick="DrawUp()"> Up </button>
+		<!-- could onfocus() be used for continuous drawing?   -->
 		</p>
 		 <p>
 		<button id="leftButton" onclick="DrawLeft()"> Left </button>
@@ -32,13 +33,13 @@
 	<p>First Division</p>
 	<p>Some more text.</p></div>
 	<div id="container"></div>
-
+   
 	
 	<!-- First Code to begin drawing -->
 	<!-- All drawing on the canvas must be done inside a JavaScript -->
 	<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
     </canvas>
-
+<div id="container2"></div>
 <!-- JavaScripts are most often in the body -->
 <!-- Outside JavaScript -->
 <script src="js/DrawingFun1.js"> </script>

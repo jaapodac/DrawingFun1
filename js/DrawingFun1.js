@@ -27,8 +27,8 @@ Special Thanks to: J. Apodaca
 var pHereX = 0;
 var pHereY = 0;
 
-var xMax = 150;
-var yMax = 75;
+var xMax = 200;
+var yMax = 100;
 var xMin = 0;
 var yMin = 0;
 
@@ -37,14 +37,30 @@ var ctx = c.getContext("2d");
 	
 	function ReportCoordinate(){
 	
-		document.getElementById('container').innerHTML= " X = " + pHereX + " Y = " + pHereY ;
+		document.getElementById('container2').innerHTML= " X = " + pHereX + " Y = " + pHereY ;
 	} // End ReportCoordinate
 	
 	function DrawMe(){
 		
-		// draw a red rectangle
+		// draw a red rectangle (00FFFF and red is "#FF0000" )
+		ctx.fillStyle = "#00FFFF";
+		ctx.fillRect(0,0,xMax,  yMax);
+		
+		// Draw a sine wave
 		ctx.fillStyle = "#FF0000";
-		ctx.fillRect(0,0,xMax,yMax);
+		
+		var holdY = pHereY; // copy y coordinate
+		 holdY = (yMax/2); //zero or origin point
+		for (var i=0;i < xMax; i++)
+		{
+		 	 ctx.moveTo(i, holdY );
+			 holdY = (yMax/2) + (yMax/2) * Math.sin(i/xMax * 2 * Math.PI);
+			ctx.lineTo(i, holdY );
+			 
+			ctx.stroke();
+		}
+		ctx.fillStyle = "#00FF00";
+		
 	} // End DrawMe
 	
 	function DrawUp(){
